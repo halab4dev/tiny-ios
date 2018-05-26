@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B2D6B822097319400A0E936 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D6B812097319400A0E936 /* AppDelegate.swift */; };
-		3B2D6B842097319400A0E936 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D6B832097319400A0E936 /* ViewController.swift */; };
+		3B2D6B842097319400A0E936 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D6B832097319400A0E936 /* LoginViewController.swift */; };
 		3B2D6B872097319400A0E936 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B2D6B852097319400A0E936 /* Main.storyboard */; };
 		3B2D6B892097319500A0E936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B2D6B882097319500A0E936 /* Assets.xcassets */; };
 		3B2D6B8C2097319500A0E936 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B2D6B8A2097319500A0E936 /* LaunchScreen.storyboard */; };
@@ -23,8 +23,6 @@
 		3B86E22E209F02CF00FA23F2 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B86E22D209F02CF00FA23F2 /* Constant.swift */; };
 		3BC1199C20B1061B00D390F9 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC1199B20B1061B00D390F9 /* LocalStorage.swift */; };
 		3BC1199F20B1080A00D390F9 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC1199E20B1080A00D390F9 /* LoginResponse.swift */; };
-		3BC119A120B10E3D00D390F9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC119A020B10E3D00D390F9 /* Response.swift */; };
-		3BC119A320B10F6D00D390F9 /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC119A220B10F6D00D390F9 /* ResponseData.swift */; };
 		3BC119A520B1CE8C00D390F9 /* ResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC119A420B1CE8C00D390F9 /* ResponseCode.swift */; };
 		3BC119A720B1D0B700D390F9 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC119A620B1D0B700D390F9 /* MessageService.swift */; };
 		5B862076F9DD6E7866C43EEE /* Pods_Tiny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C77154FE3670300D0A2D20 /* Pods_Tiny.framework */; };
@@ -33,7 +31,7 @@
 /* Begin PBXFileReference section */
 		3B2D6B7E2097319400A0E936 /* Tiny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tiny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B2D6B812097319400A0E936 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3B2D6B832097319400A0E936 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3B2D6B832097319400A0E936 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3B2D6B862097319400A0E936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B2D6B882097319500A0E936 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B2D6B8B2097319500A0E936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,8 +47,6 @@
 		3B86E22D209F02CF00FA23F2 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		3BC1199B20B1061B00D390F9 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		3BC1199E20B1080A00D390F9 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
-		3BC119A020B10E3D00D390F9 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		3BC119A220B10F6D00D390F9 /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
 		3BC119A420B1CE8C00D390F9 /* ResponseCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCode.swift; sourceTree = "<group>"; };
 		3BC119A620B1D0B700D390F9 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		C5F22A51BC54D4C56909128C /* Pods-Tiny.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tiny.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tiny/Pods-Tiny.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,7 +94,6 @@
 				3B86E228209EE66500FA23F2 /* Constant */,
 				3B2D6B9320976D8300A0E936 /* Screen */,
 				3B2D6B812097319400A0E936 /* AppDelegate.swift */,
-				3B2D6B832097319400A0E936 /* ViewController.swift */,
 				3B2D6B852097319400A0E936 /* Main.storyboard */,
 				3B2D6B882097319500A0E936 /* Assets.xcassets */,
 				3B2D6B8A2097319500A0E936 /* LaunchScreen.storyboard */,
@@ -110,8 +105,9 @@
 		3B2D6B9320976D8300A0E936 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				3B2D6B942097F36300A0E936 /* RegisterViewController.swift */,
 				3B86E22B209EFE6F00FA23F2 /* BaseViewController.swift */,
+				3B2D6B832097319400A0E936 /* LoginViewController.swift */,
+				3B2D6B942097F36300A0E936 /* RegisterViewController.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -150,8 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				3BC1199E20B1080A00D390F9 /* LoginResponse.swift */,
-				3BC119A020B10E3D00D390F9 /* Response.swift */,
-				3BC119A220B10F6D00D390F9 /* ResponseData.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -293,13 +287,11 @@
 				3B86E22C209EFE6F00FA23F2 /* BaseViewController.swift in Sources */,
 				3B2D6B952097F36300A0E936 /* RegisterViewController.swift in Sources */,
 				3B4DCBE420A69A8C00E59DCA /* ParamKey.swift in Sources */,
-				3BC119A120B10E3D00D390F9 /* Response.swift in Sources */,
-				3BC119A320B10F6D00D390F9 /* ResponseData.swift in Sources */,
 				3BC119A520B1CE8C00D390F9 /* ResponseCode.swift in Sources */,
 				3B4DCBE220A697D500E59DCA /* ServerAddress.swift in Sources */,
 				3B86E22A209EE68800FA23F2 /* Message.swift in Sources */,
 				3BC119A720B1D0B700D390F9 /* MessageService.swift in Sources */,
-				3B2D6B842097319400A0E936 /* ViewController.swift in Sources */,
+				3B2D6B842097319400A0E936 /* LoginViewController.swift in Sources */,
 				3B2D6B822097319400A0E936 /* AppDelegate.swift in Sources */,
 				3BC1199F20B1080A00D390F9 /* LoginResponse.swift in Sources */,
 				3B4EC1FA20B31F04004E2FEC /* API.swift in Sources */,

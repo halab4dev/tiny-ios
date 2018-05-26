@@ -14,8 +14,4 @@ struct LoginResponse: Decodable {
     var email : String
     var username: String
     var accessToken: String
-    
-//    required init(from decoder: Decoder) throws {
-//        fatalError("init(from:) has not been implemented")
-//    }
 }
