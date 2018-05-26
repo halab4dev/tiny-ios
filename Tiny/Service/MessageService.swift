@@ -11,11 +11,12 @@ import Foundation
 struct MessageService {
     
     static let MESSAGE_MAP : [Int: String] = [
-        ResponseCode.EMAIL_REGISTERED       :   Message.EMAIL_REGISTERED,
-        ResponseCode.INTERNAL_SERVER_ERROR  :   Message.INTERNAL_SERVER_ERROR
+        ResponseCode.EMAIL_REGISTERED           :   Message.EMAIL_REGISTERED,
+        ResponseCode.INCORRECT_EMAIL_OR_PASSWORD: Message.INCORRECT_EMAIL_OR_PASSWORD,
+        ResponseCode.INTERNAL_SERVER_ERROR      :   Message.INTERNAL_SERVER_ERROR
     ]
     
     static func getMessage(errorCode : Int) -> String {
-        return MESSAGE_MAP[errorCode] ?? "Unknow Error"
+        return MESSAGE_MAP[errorCode] ?? "Unknow Error: \(errorCode)"
     }
 }

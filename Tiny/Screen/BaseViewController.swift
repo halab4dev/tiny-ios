@@ -29,6 +29,14 @@ class BaseViewController: UIViewController {
         return true
     }
     
+    func isValidPassword(_ password: String) -> Bool {
+        if(password.count < Constant.MIN_PASSWORD_LENGTH) {
+            showErrorMessage(Message.INVALID_PASSWORD)
+            return false
+        }
+        return true
+    }
+    
     func showErrorMessage(_ message: String) {
         let alertController = UIAlertController(title: "Error", message:
             message, preferredStyle: UIAlertControllerStyle.alert)

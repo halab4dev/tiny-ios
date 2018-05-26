@@ -10,11 +10,11 @@ import Foundation
 
 struct LocalStorage {
     
-    static func saveUserInfo(loginResponse: LoginResponse) {
+    static func saveUserInfo(userId: String, username: String, email: String, accessToken: String) {
         let defaults = UserDefaults.standard
-        defaults.set(loginResponse.userId, forKey: ParamKey.USER_ID)
-        defaults.set(loginResponse.email, forKey: ParamKey.EMAIL)
-        defaults.set(loginResponse.username, forKey: ParamKey.USERNAME)
-        defaults.set(loginResponse.accessToken, forKey: ParamKey.ACCESS_TOKEN)
+        defaults.set(userId, forKey: ParamKey.USER_ID)
+        defaults.set(email, forKey: ParamKey.EMAIL)
+        defaults.set(username, forKey: ParamKey.USERNAME)
+        defaults.set(accessToken, forKey: ParamKey.ACCESS_TOKEN)
     }
 }

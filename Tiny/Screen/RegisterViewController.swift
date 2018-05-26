@@ -43,6 +43,10 @@ class RegisterViewController: BaseViewController {
         
         registerButton.layer.cornerRadius = 15.0
     }
+    
+    func goToTimelineScreen() {
+        performSegue(withIdentifier: "registerScreenToHomeScreen", sender: nil)
+    }
 
     @IBAction func register(_ sender: UIButton) {
         print("Register button clicked")
@@ -61,7 +65,9 @@ class RegisterViewController: BaseViewController {
     }
     
     func handleResponse(_ loginResponse : LoginResponse) {
-        print("Handle login response \(loginResponse)")
+        UserService.saveUserInfo(userId: loginResponse.userId,username: loginResponse.username,
+                                 email: loginResponse.email,accessToken: loginResponse.accessToken)
+        goToTimelineScreen()
     }
     
     func inputIsValid() -> Bool {
@@ -81,14 +87,6 @@ class RegisterViewController: BaseViewController {
         return isValidPassword(password)
         && isValidPassword(confirmPassword)
         && isMatchedPassword(password, confirmPassword)
-    }
-    
-    func isValidPassword(_ password: String) -> Bool {
-        if(password.count < Constant.MIN_PASSWORD_LENGTH) {
-            showErrorMessage(Message.INVALID_PASSWORD)
-            return false
-        }
-        return true
     }
     
     func isMatchedPassword(_ password : String, _ confirmPassword: String) -> Bool{

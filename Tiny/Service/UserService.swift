@@ -12,7 +12,21 @@ import SwiftyJSON
 
 struct UserService {
     
+    static let SESSION = "sessions/"
     static let USERS = "users/"
+    
+    /// Call API Login
+    static func login(email: String, password: String,
+                      successCallback : @escaping(_ loginResponse: LoginResponse)->Void,
+                      errorCallback: @escaping(_ errorCode: Int)->Void) {
+        let requestUrl = ServerAddress.SERVER_ADDRESS + SESSION
+        let requestData : Dictionary<String,Any> = [
+            ParamKey.EMAIL : email,
+            ParamKey.PASSWORD : password
+        ]
+        API.call(url: requestUrl, method: HTTPMethod.post, data: requestData, type: LoginResponse.self,
+                 successCallback: successCallback, errorCallback: errorCallback)
+    }
     
     static func register(email: String, username: String, password: String,
                          successCallback : @escaping(_ loginResponse: LoginResponse)->Void,
@@ -25,26 +39,10 @@ struct UserService {
         ]
         API.call(url: requestUrl, method: HTTPMethod.post, data: requestData, type: LoginResponse.self,
                  successCallback: successCallback, errorCallback: errorCallback)
-        
-//        Alamofire.request(requestUrl, method: .post, parameters: requestData, encoding: JSONEncoding.default)
-//            
-//            .responseJSON{ response in
-//                if let jsonValue = response.result.value {
-//                    let jsonObject = JSON(jsonValue)
-//                    let code = jsonObject[ParamKey.CODE].int!
-//                    if(code != ResponseCode.SUCCESS) {
-//                        errorCallback(code)
-//                    } else {
-//                        let data = jsonObject[ParamKey.DATA]
-//                        do {
-//                            let loginResponse = try JSONDecoder().decode(LoginResponse.self, from: data.rawData())
-//                            successCallback(loginResponse)
-//                        } catch let jsonError {
-//                            print("Decode JSON error: \(jsonError)")
-//                        }
-//                    }
-//                }
-//        }
+    }
+    
+    static func saveUserInfo(userId: String, username: String, email: String, accessToken: String){
+        LocalStorage.saveUserInfo(userId: userId, username: username, email: email, accessToken: accessToken);
     }
     
 }

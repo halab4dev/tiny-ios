@@ -14,6 +14,7 @@ struct ResponseCode {
     static let SUCCESS = 200
     
     static let EMAIL_REGISTERED = 410
+    static let INCORRECT_EMAIL_OR_PASSWORD = 411
     
     static let INTERNAL_SERVER_ERROR = 500
     
