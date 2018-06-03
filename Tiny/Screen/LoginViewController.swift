@@ -34,23 +34,23 @@ class LoginViewController: BaseViewController {
     }
 
     @IBAction func login(_ sender: UIButton) {
-        print("Login button clicked")
         if(inputIsValid()) {
-            sendRegisterRequest(handleResponse)
+            sendLoginRequest(handleResponse)
         }
     }
     
-    func sendRegisterRequest(_ handleResponseFunction : @escaping(_ loginResponse : LoginResponse)->()) {
+    func sendLoginRequest(_ handleResponseFunction : @escaping(_ loginResponse : LoginResponse)->()) {
         let email: String = emailInput.text!
         let password: String = passwordInput.text!
+        showLoadingIcon()
         UserService.login(email: email, password: password,
                              successCallback: handleResponseFunction, errorCallback: handleErrorResponse);
-        print("After clicked")
     }
     
     func handleResponse(_ loginResponse : LoginResponse) {
         UserService.saveUserInfo(userId: loginResponse.userId,username: loginResponse.username,
                                  email: loginResponse.email,accessToken: loginResponse.accessToken)
+        hideLoadingIcon()
         goToTimelineScreen()
     }
     
@@ -68,12 +68,10 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func goToRegisterScreen(_ sender: UIButton) {
-        print("Go to register screen")        
         performSegue(withIdentifier: "firstScreenToRegisterScreen", sender: nil)
     }
     
     @IBAction func backFromRegisterScreen(segue: UIStoryboardSegue){
-        print("Back from register screen")
     }
 }
 

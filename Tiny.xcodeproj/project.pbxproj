@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B18E2CB20C2B4A5005D5B38 /* ChangePasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B18E2CA20C2B4A5005D5B38 /* ChangePasswordResponse.swift */; };
 		3B2D6B822097319400A0E936 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D6B812097319400A0E936 /* AppDelegate.swift */; };
 		3B2D6B842097319400A0E936 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D6B832097319400A0E936 /* LoginViewController.swift */; };
 		3B2D6B872097319400A0E936 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B2D6B852097319400A0E936 /* Main.storyboard */; };
@@ -18,6 +19,8 @@
 		3B4DCBE220A697D500E59DCA /* ServerAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4DCBE120A697D500E59DCA /* ServerAddress.swift */; };
 		3B4DCBE420A69A8C00E59DCA /* ParamKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4DCBE320A69A8C00E59DCA /* ParamKey.swift */; };
 		3B4EC1FA20B31F04004E2FEC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4EC1F920B31F04004E2FEC /* API.swift */; };
+		3B72683020BC4F3200912FB3 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B72682F20BC4F3200912FB3 /* UserProfileViewController.swift */; };
+		3B72683220BC5B1400912FB3 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B72683120BC5B1400912FB3 /* ChangePasswordViewController.swift */; };
 		3B86E22A209EE68800FA23F2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B86E229209EE68800FA23F2 /* Message.swift */; };
 		3B86E22C209EFE6F00FA23F2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B86E22B209EFE6F00FA23F2 /* BaseViewController.swift */; };
 		3B86E22E209F02CF00FA23F2 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B86E22D209F02CF00FA23F2 /* Constant.swift */; };
@@ -29,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B18E2CA20C2B4A5005D5B38 /* ChangePasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordResponse.swift; sourceTree = "<group>"; };
 		3B2D6B7E2097319400A0E936 /* Tiny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tiny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B2D6B812097319400A0E936 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B2D6B832097319400A0E936 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +46,8 @@
 		3B4DCBE120A697D500E59DCA /* ServerAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAddress.swift; sourceTree = "<group>"; };
 		3B4DCBE320A69A8C00E59DCA /* ParamKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamKey.swift; sourceTree = "<group>"; };
 		3B4EC1F920B31F04004E2FEC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		3B72682F20BC4F3200912FB3 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		3B72683120BC5B1400912FB3 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		3B86E229209EE68800FA23F2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		3B86E22B209EFE6F00FA23F2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3B86E22D209F02CF00FA23F2 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -108,6 +114,8 @@
 				3B86E22B209EFE6F00FA23F2 /* BaseViewController.swift */,
 				3B2D6B832097319400A0E936 /* LoginViewController.swift */,
 				3B2D6B942097F36300A0E936 /* RegisterViewController.swift */,
+				3B72682F20BC4F3200912FB3 /* UserProfileViewController.swift */,
+				3B72683120BC5B1400912FB3 /* ChangePasswordViewController.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -146,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				3BC1199E20B1080A00D390F9 /* LoginResponse.swift */,
+				3B18E2CA20C2B4A5005D5B38 /* ChangePasswordResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -283,13 +292,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B4DCBE020A67FB200E59DCA /* UserService.swift in Sources */,
+				3B72683020BC4F3200912FB3 /* UserProfileViewController.swift in Sources */,
 				3BC1199C20B1061B00D390F9 /* LocalStorage.swift in Sources */,
 				3B86E22C209EFE6F00FA23F2 /* BaseViewController.swift in Sources */,
 				3B2D6B952097F36300A0E936 /* RegisterViewController.swift in Sources */,
 				3B4DCBE420A69A8C00E59DCA /* ParamKey.swift in Sources */,
 				3BC119A520B1CE8C00D390F9 /* ResponseCode.swift in Sources */,
+				3B18E2CB20C2B4A5005D5B38 /* ChangePasswordResponse.swift in Sources */,
 				3B4DCBE220A697D500E59DCA /* ServerAddress.swift in Sources */,
 				3B86E22A209EE68800FA23F2 /* Message.swift in Sources */,
+				3B72683220BC5B1400912FB3 /* ChangePasswordViewController.swift in Sources */,
 				3BC119A720B1D0B700D390F9 /* MessageService.swift in Sources */,
 				3B2D6B842097319400A0E936 /* LoginViewController.swift in Sources */,
 				3B2D6B822097319400A0E936 /* AppDelegate.swift in Sources */,

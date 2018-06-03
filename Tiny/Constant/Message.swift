@@ -10,6 +10,7 @@ import Foundation
 
 struct Message {
     
+    static let CHANGE_PASSWORD_SUCCESSFULLY = "Change password successfully"
     static let CONFIRM_PASSWORD_CAN_NOT_BE_EMPTY = "Confirm password can not be empty"
     static let EMAIL_CAN_NOT_BE_EMPTY = "Email can not be empty"
     static let EMAIL_REGISTERED = "Email has been registered. \nPlease choose other email!"

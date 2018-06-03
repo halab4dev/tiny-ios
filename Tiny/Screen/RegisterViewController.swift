@@ -49,7 +49,6 @@ class RegisterViewController: BaseViewController {
     }
 
     @IBAction func register(_ sender: UIButton) {
-        print("Register button clicked")
         if(inputIsValid()) {
             sendRegisterRequest(handleResponse)
         }
@@ -59,14 +58,15 @@ class RegisterViewController: BaseViewController {
         let email: String = emailInput.text!
         let username: String = usernameInput.text!
         let password: String = passwordInput.text!
+        showLoadingIcon()
         UserService.register(email: email, username: username, password: password,
                              successCallback: handleResponseFunction, errorCallback: handleErrorResponse);
-        print("After clicked")
     }
     
     func handleResponse(_ loginResponse : LoginResponse) {
         UserService.saveUserInfo(userId: loginResponse.userId,username: loginResponse.username,
                                  email: loginResponse.email,accessToken: loginResponse.accessToken)
+        hideLoadingIcon()
         goToTimelineScreen()
     }
     

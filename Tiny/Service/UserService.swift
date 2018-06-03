@@ -14,6 +14,28 @@ struct UserService {
     
     static let SESSION = "sessions/"
     static let USERS = "users/"
+    static let PASSWORD = "/passwords/"
+    
+    static func changePassword(userId: String, oldPassword: String, newPassword: String,
+                               successCallback : @escaping(_ changePasswordResponse: ChangePasswordResponse)->Void,
+                               errorCallback: @escaping(_ errorCode: Int)->Void){
+        let requestUrl = ServerAddress.SERVER_ADDRESS + USERS + userId + PASSWORD
+        let requestData : Dictionary<String,Any> = [
+            ParamKey.OLD_PASSWORD : oldPassword,
+            ParamKey.NEW_PASSWORD : newPassword
+        ]
+        API.call(url: requestUrl, method: HTTPMethod.put, data: requestData, type: ChangePasswordResponse.self,
+                 successCallback: successCallback, errorCallback: errorCallback)
+        
+    }
+    
+    static func clearUserInfo() {
+        LocalStorage.clearUserInfo();
+    }
+    
+    static func getUserId() -> String {
+        return LocalStorage.getUserId()
+    }
     
     /// Call API Login
     static func login(email: String, password: String,
@@ -43,6 +65,10 @@ struct UserService {
     
     static func saveUserInfo(userId: String, username: String, email: String, accessToken: String){
         LocalStorage.saveUserInfo(userId: userId, username: username, email: email, accessToken: accessToken);
+    }
+    
+    static func updateAccessToken(accessToken: String) {
+        LocalStorage.updateAccessToken(accessToken)
     }
     
 }

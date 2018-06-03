@@ -17,25 +17,33 @@ struct API {
                                   successCallback : @escaping(_ responseData: T)->Void,
                                   errorCallback: @escaping(_ errorCode: Int)->Void) {
         
-        Alamofire.request(url, method: method, parameters: data, encoding: JSONEncoding.default)
+        //Add access token in header of each request
+        let accessToken = LocalStorage.getAccessToken()
+        let headers : Dictionary<String,String> = [
+            ParamKey.AUTHORIZATION : accessToken
+        ]
+        Alamofire.request(url, method: method, parameters: data, encoding: JSONEncoding.default, headers : headers)
             
             .responseJSON{ response in
-                if let jsonValue = response.result.value {
-                    print("Response \(jsonValue)")
-                    let jsonObject = JSON(jsonValue)
-                    let code = jsonObject[ParamKey.CODE].int!
-                    if(code != ResponseCode.SUCCESS) {
-                        errorCallback(code)
-                    } else {
-                        let data = jsonObject[ParamKey.DATA]
-                        do {
-                            let responseData = try JSONDecoder().decode(T.self, from: data.rawData())
-                            successCallback(responseData)
-                        } catch let jsonError {
-                            errorCallback(ResponseCode.PARSE_JSON_ERROR)
-                            print("Decode JSON error: \(jsonError)")
-                        }
+                switch(response.result){
+                case .success(let jsonBody):
+                        let jsonObject = JSON(jsonBody)
+                        let code = jsonObject[ParamKey.CODE].int!
+                        if(code != ResponseCode.SUCCESS) {
+                            errorCallback(code)
+                        } else {
+                            let data = jsonObject[ParamKey.DATA]
+                            do {
+                                let responseData = try JSONDecoder().decode(T.self, from: data.rawData())
+                                successCallback(responseData)
+                            } catch let jsonError {
+                                errorCallback(ResponseCode.PARSE_JSON_ERROR)
+                                print("Decode JSON error: \(jsonError)")
+                            }
                     }
+                case .failure(let error):
+                            print("Call API error: \(error)")
+                            errorCallback(ResponseCode.INTERNAL_SERVER_ERROR)
                 }
         }
     }
