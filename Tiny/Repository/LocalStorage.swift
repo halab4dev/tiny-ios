@@ -28,6 +28,11 @@ struct LocalStorage {
         return defaults.string(forKey: ParamKey.USER_ID) ?? ""
     }
     
+    static func getUserName() -> String {
+        let defaults = UserDefaults.standard
+        return defaults.string(forKey: ParamKey.USERNAME) ?? ""        
+    }
+    
     static func saveUserInfo(userId: String, username: String, email: String, accessToken: String) {
         let defaults = UserDefaults.standard
         defaults.set(userId, forKey: ParamKey.USER_ID)

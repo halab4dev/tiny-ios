@@ -14,6 +14,9 @@
 		3B2D6B892097319500A0E936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B2D6B882097319500A0E936 /* Assets.xcassets */; };
 		3B2D6B8C2097319500A0E936 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B2D6B8A2097319500A0E936 /* LaunchScreen.storyboard */; };
 		3B2D6B952097F36300A0E936 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D6B942097F36300A0E936 /* RegisterViewController.swift */; };
+		3B34A40E20CB834A0083F26A /* UserDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B34A40D20CB834A0083F26A /* UserDetailResponse.swift */; };
+		3B34A41020CBD6E00083F26A /* DateTimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B34A40F20CBD6E00083F26A /* DateTimeService.swift */; };
+		3B34A41220CBE07B0083F26A /* DateTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B34A41120CBE07B0083F26A /* DateTimeFormat.swift */; };
 		3B4DCBDD20A67E4C00E59DCA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 3B4DCBDC20A67E4C00E59DCA /* Podfile */; };
 		3B4DCBE020A67FB200E59DCA /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4DCBDF20A67FB200E59DCA /* UserService.swift */; };
 		3B4DCBE220A697D500E59DCA /* ServerAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4DCBE120A697D500E59DCA /* ServerAddress.swift */; };
@@ -41,6 +44,9 @@
 		3B2D6B8B2097319500A0E936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B2D6B8D2097319500A0E936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B2D6B942097F36300A0E936 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		3B34A40D20CB834A0083F26A /* UserDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailResponse.swift; sourceTree = "<group>"; };
+		3B34A40F20CBD6E00083F26A /* DateTimeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeService.swift; sourceTree = "<group>"; };
+		3B34A41120CBE07B0083F26A /* DateTimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeFormat.swift; sourceTree = "<group>"; };
 		3B4DCBDC20A67E4C00E59DCA /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3B4DCBDF20A67FB200E59DCA /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		3B4DCBE120A697D500E59DCA /* ServerAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAddress.swift; sourceTree = "<group>"; };
@@ -126,6 +132,7 @@
 				3B4DCBDF20A67FB200E59DCA /* UserService.swift */,
 				3B4DCBE120A697D500E59DCA /* ServerAddress.swift */,
 				3BC119A620B1D0B700D390F9 /* MessageService.swift */,
+				3B34A40F20CBD6E00083F26A /* DateTimeService.swift */,
 				3B4EC1F920B31F04004E2FEC /* API.swift */,
 			);
 			path = Service;
@@ -138,6 +145,7 @@
 				3B86E22D209F02CF00FA23F2 /* Constant.swift */,
 				3B4DCBE320A69A8C00E59DCA /* ParamKey.swift */,
 				3BC119A420B1CE8C00D390F9 /* ResponseCode.swift */,
+				3B34A41120CBE07B0083F26A /* DateTimeFormat.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -155,6 +163,7 @@
 			children = (
 				3BC1199E20B1080A00D390F9 /* LoginResponse.swift */,
 				3B18E2CA20C2B4A5005D5B38 /* ChangePasswordResponse.swift */,
+				3B34A40D20CB834A0083F26A /* UserDetailResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -294,7 +303,9 @@
 				3B4DCBE020A67FB200E59DCA /* UserService.swift in Sources */,
 				3B72683020BC4F3200912FB3 /* UserProfileViewController.swift in Sources */,
 				3BC1199C20B1061B00D390F9 /* LocalStorage.swift in Sources */,
+				3B34A41020CBD6E00083F26A /* DateTimeService.swift in Sources */,
 				3B86E22C209EFE6F00FA23F2 /* BaseViewController.swift in Sources */,
+				3B34A40E20CB834A0083F26A /* UserDetailResponse.swift in Sources */,
 				3B2D6B952097F36300A0E936 /* RegisterViewController.swift in Sources */,
 				3B4DCBE420A69A8C00E59DCA /* ParamKey.swift in Sources */,
 				3BC119A520B1CE8C00D390F9 /* ResponseCode.swift in Sources */,
@@ -307,6 +318,7 @@
 				3B2D6B822097319400A0E936 /* AppDelegate.swift in Sources */,
 				3BC1199F20B1080A00D390F9 /* LoginResponse.swift in Sources */,
 				3B4EC1FA20B31F04004E2FEC /* API.swift in Sources */,
+				3B34A41220CBE07B0083F26A /* DateTimeFormat.swift in Sources */,
 				3B86E22E209F02CF00FA23F2 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

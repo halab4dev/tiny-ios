@@ -16,6 +16,7 @@ struct UserService {
     static let USERS = "users/"
     static let PASSWORD = "/passwords/"
     
+    /// Call API `Change Password`
     static func changePassword(userId: String, oldPassword: String, newPassword: String,
                                successCallback : @escaping(_ changePasswordResponse: ChangePasswordResponse)->Void,
                                errorCallback: @escaping(_ errorCode: Int)->Void){
@@ -29,15 +30,31 @@ struct UserService {
         
     }
     
+    /// Clear user info in local storage
     static func clearUserInfo() {
         LocalStorage.clearUserInfo();
     }
     
+    /// Get user id from local storage
     static func getUserId() -> String {
         return LocalStorage.getUserId()
     }
     
-    /// Call API Login
+    /// Call API `Get User Info`
+    static func getUserInfo(userId: String,
+                            successCallback : @escaping(_ loginResponse: UserDetailResponse)->Void,
+                            errorCallback: @escaping(_ errorCode: Int)->Void) {
+        let requestUrl = ServerAddress.SERVER_ADDRESS + USERS + userId
+        API.call(url: requestUrl, method: HTTPMethod.get, data: nil, type: UserDetailResponse.self,
+                 successCallback: successCallback, errorCallback: errorCallback)
+    }
+    
+    /// Get user name from local storage
+    static func getUserName() -> String {
+        return LocalStorage.getUserName()
+    }
+    
+    /// Call API `Login`
     static func login(email: String, password: String,
                       successCallback : @escaping(_ loginResponse: LoginResponse)->Void,
                       errorCallback: @escaping(_ errorCode: Int)->Void) {
@@ -50,6 +67,8 @@ struct UserService {
                  successCallback: successCallback, errorCallback: errorCallback)
     }
     
+    
+    /// Call API `Register`
     static func register(email: String, username: String, password: String,
                          successCallback : @escaping(_ loginResponse: LoginResponse)->Void,
                          errorCallback: @escaping(_ errorCode: Int)->Void){
@@ -63,10 +82,12 @@ struct UserService {
                  successCallback: successCallback, errorCallback: errorCallback)
     }
     
+    /// Save user info in local storage
     static func saveUserInfo(userId: String, username: String, email: String, accessToken: String){
         LocalStorage.saveUserInfo(userId: userId, username: username, email: email, accessToken: accessToken);
     }
     
+    /// Update access token in local storage
     static func updateAccessToken(accessToken: String) {
         LocalStorage.updateAccessToken(accessToken)
     }

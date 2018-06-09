@@ -12,7 +12,7 @@ import SwiftyJSON
 
 struct API {
     
-    static func call<T:Decodable>(url : String, method: HTTPMethod, data : Dictionary<String,Any>,
+    static func call<T:Decodable>(url : String, method: HTTPMethod, data : Dictionary<String,Any>? = nil,
                                   type: T.Type,
                                   successCallback : @escaping(_ responseData: T)->Void,
                                   errorCallback: @escaping(_ errorCode: Int)->Void) {

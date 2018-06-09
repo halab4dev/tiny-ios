@@ -10,6 +10,10 @@ import UIKit
 
 class UserProfileViewController: BaseViewController {
 
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var registerTimeLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    
     @IBOutlet weak var changePasswordButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
     
@@ -18,11 +22,29 @@ class UserProfileViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         makeStyle()
+        initValue()
+        sendGetUserDetailRequest()
     }
     
     func makeStyle() {
         changePasswordButton.layer.cornerRadius = 15.0
         logoutButton.layer.cornerRadius = 15.0
+    }
+    
+    func initValue() {
+        usernameLabel.text = UserService.getUserName()
+    }
+    
+    func sendGetUserDetailRequest() {
+        let userId: String = UserService.getUserId()
+        showLoadingIcon()
+        UserService.getUserInfo(userId: userId, successCallback: handleResponse, errorCallback: handleErrorResponse)
+    }
+    
+    func handleResponse(_ userDetailResponse : UserDetailResponse) {
+        hideLoadingIcon()
+        registerTimeLabel.text = DateTimeService.toDateString(userDetailResponse.registerTime)
+        emailLabel.text = userDetailResponse.email
     }
     
     @IBAction func goToChangePasswordScreen(_ sender: UIButton) {
