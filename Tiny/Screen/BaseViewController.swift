@@ -32,6 +32,16 @@ class BaseViewController: UIViewController {
         activityIndicatorView.stopAnimating()
     }
     
+    func loadImage(imageUrl: String, imageView: UIImageView) {
+        ImageService.loadImage(imageUrl: imageUrl,imageView: imageView, successCallback: renderImage)
+    }
+    
+    func renderImage(image : UIImage, imageView: UIImageView) {
+        DispatchQueue.main.async {
+            imageView.image = image
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

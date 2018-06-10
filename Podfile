@@ -4,5 +4,6 @@ use_frameworks!
 
 target 'Tiny' do
     pod 'Alamofire', '~> 4.7'
+    pod 'AlamofireImage', '~> 3.3'
     pod 'SwiftyJSON', '~> 4.0'
 end

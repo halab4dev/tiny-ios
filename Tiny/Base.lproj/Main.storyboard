@@ -212,7 +212,11 @@
                                         <rect key="frame" x="33.5" y="0.0" width="268" height="250"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WQt-d7-UxR" userLabel="Avatar">
-                                                <rect key="frame" x="0.0" y="0.0" width="268" height="153"/>
+                                                <rect key="frame" x="57.5" y="0.0" width="153" height="153"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="153" id="VrO-pX-Vpq"/>
+                                                    <constraint firstAttribute="height" constant="153" id="lQO-gp-K3A"/>
+                                                </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKY-dF-zlb">
                                                 <rect key="frame" x="67.5" y="163" width="133" height="36"/>
@@ -275,7 +279,6 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="Jd3-42-ZH8"/>
                                             <constraint firstItem="Hz2-N9-uPR" firstAttribute="width" secondItem="SHf-CX-VEx" secondAttribute="width" id="VjA-0A-DIq"/>
-                                            <constraint firstItem="WQt-d7-UxR" firstAttribute="width" secondItem="SHf-CX-VEx" secondAttribute="width" id="sv8-1F-J7n"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="r3T-pv-Fke" userLabel="Buttons">
@@ -327,6 +330,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="wEs-fy-dnT"/>
                     <connections>
+                        <outlet property="avatarImageView" destination="WQt-d7-UxR" id="OFk-tr-Q2X"/>
                         <outlet property="changePasswordButton" destination="biO-Wz-E3V" id="60f-mT-FP8"/>
                         <outlet property="emailLabel" destination="72k-2O-Zd4" id="L1H-6t-UXM"/>
                         <outlet property="logoutButton" destination="0QH-9U-faH" id="xPe-6R-Rcl"/>

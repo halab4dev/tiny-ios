@@ -17,6 +17,7 @@
 		3B34A40E20CB834A0083F26A /* UserDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B34A40D20CB834A0083F26A /* UserDetailResponse.swift */; };
 		3B34A41020CBD6E00083F26A /* DateTimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B34A40F20CBD6E00083F26A /* DateTimeService.swift */; };
 		3B34A41220CBE07B0083F26A /* DateTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B34A41120CBE07B0083F26A /* DateTimeFormat.swift */; };
+		3B34A41420CBEB810083F26A /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B34A41320CBEB810083F26A /* ImageService.swift */; };
 		3B4DCBDD20A67E4C00E59DCA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 3B4DCBDC20A67E4C00E59DCA /* Podfile */; };
 		3B4DCBE020A67FB200E59DCA /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4DCBDF20A67FB200E59DCA /* UserService.swift */; };
 		3B4DCBE220A697D500E59DCA /* ServerAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4DCBE120A697D500E59DCA /* ServerAddress.swift */; };
@@ -47,6 +48,7 @@
 		3B34A40D20CB834A0083F26A /* UserDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailResponse.swift; sourceTree = "<group>"; };
 		3B34A40F20CBD6E00083F26A /* DateTimeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeService.swift; sourceTree = "<group>"; };
 		3B34A41120CBE07B0083F26A /* DateTimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeFormat.swift; sourceTree = "<group>"; };
+		3B34A41320CBEB810083F26A /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		3B4DCBDC20A67E4C00E59DCA /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3B4DCBDF20A67FB200E59DCA /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		3B4DCBE120A697D500E59DCA /* ServerAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAddress.swift; sourceTree = "<group>"; };
@@ -129,11 +131,12 @@
 		3B4DCBDE20A67F8E00E59DCA /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				3B4DCBDF20A67FB200E59DCA /* UserService.swift */,
-				3B4DCBE120A697D500E59DCA /* ServerAddress.swift */,
-				3BC119A620B1D0B700D390F9 /* MessageService.swift */,
-				3B34A40F20CBD6E00083F26A /* DateTimeService.swift */,
 				3B4EC1F920B31F04004E2FEC /* API.swift */,
+				3B34A40F20CBD6E00083F26A /* DateTimeService.swift */,
+				3B34A41320CBEB810083F26A /* ImageService.swift */,
+				3BC119A620B1D0B700D390F9 /* MessageService.swift */,
+				3B4DCBE120A697D500E59DCA /* ServerAddress.swift */,
+				3B4DCBDF20A67FB200E59DCA /* UserService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -281,11 +284,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Tiny/Pods-Tiny-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +325,7 @@
 				3B4EC1FA20B31F04004E2FEC /* API.swift in Sources */,
 				3B34A41220CBE07B0083F26A /* DateTimeFormat.swift in Sources */,
 				3B86E22E209F02CF00FA23F2 /* Constant.swift in Sources */,
+				3B34A41420CBEB810083F26A /* ImageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
